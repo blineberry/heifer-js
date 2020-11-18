@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +9,67 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  display: flex;
+  flex-direction: column;
+  color: #333;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+main, footer {
+  padding: 0 1em;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+input::before {
+  content: ' ';
+}
+
+#root {
+  margin: 2em 0;
+}
+
+.output-instructions {
+  font-size: 1.25em;
+  max-width: 40em;
+}
+
+section {
+  border-top: 1px solid gray;
+  margin-top: 1em;
+  padding-top: 1em;
+
+  max-width: 40em;
+}
+
+input, select {
+  margin-left: 0.5em;
+  font-size: 1em;
+}
+
+.formula {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  font-weight: bold;
+  margin: 0 2em;
+  font-size: 0.875em;
+}
+
+dl {
+  margin-left: 2em;
+}
+dt {
+  font-weight: bold;
 }

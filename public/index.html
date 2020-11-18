@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Get the dairy fat you need from the dairies you have."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -24,20 +24,52 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Heifer</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <main>
+      <header>
+        <h1>Heifer</h1>
+        <small>Get the dairy fat you need from the dairies you have.</small>
+      </header>
+      <noscript>You need to enable JavaScript to run this app.</noscript>
+      <div id="root"></div>
+      <section>
+      <p>Here's the formula for calculating how much of two different milkfat dairies to combine to get a target milkfat. For the volume of higher milkfat dairy:</p>
+      <div class="formula">higher milkfat volume = (target milkfat percent - lower milkfat percent) / (higher milkfat percent - lower milkfat percent) * target volume</div>
+      <p>And then for the lower milkfat volume:</p>
+      <div class="formula">lower milkfat volume = target volume - higher milkfat volume</div>
+      <p>This calculator uses the following milkfat values:</p>
+      <dl>
+        <dt>Butter</dt>
+          <dd>69%</dd>
+        <dt>Heavy whipping cream</dt>
+          <dd>36%</dd>
+        <dt>Whipping cream</dt>
+          <dd>30%</dd>
+        <dt>Half and half</dt>
+          <dd>14.25%</dd>
+        <dt>Whole milk</dt>
+          <dd>3.25%</dd>
+        <dt>Two percent milk</dt>
+          <dd>2%</dd>
+        <dt>One percent milk</dt>
+          <dd>1%</dd>
+        <dt>Skim milk</dt>
+          <dd>0%</dd>
+      </dl>
+      <!--
+        This HTML file is a template.
+        If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+        You can add webfonts, meta tags, or analytics to this file.
+        The build step will place the bundled scripts into the <body> tag.
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+        To begin the development, run `npm start` or `yarn start`.
+        To create a production bundle, use `npm run build` or `yarn build`.
+      -->
+      </section>
+    </main>
+    <footer><p><a href="https://github.com/blineberry/heifer-js">View on GitHub</a>. Made by <a href="https://orangegnome.com">Brent Lineberry</a>.</p></footer>
   </body>
 </html>

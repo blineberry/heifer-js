@@ -135,7 +135,7 @@ function App() {
             })}
           </select>.</p>
       </form>
-      <p>{outputInstructions}</p>
+      <p className="output-instructions">{outputInstructions}</p>
     </div>
   );
 }
