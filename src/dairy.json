@@ -1,0 +1,42 @@
+[
+    {
+        "id": "1",
+        "name": "butter",
+        "fatContent": 0.69
+    },
+    {
+        "id": "2",
+        "name": "heavy whipping cream",
+        "fatContent": 0.36
+    },
+    {
+        "id": "3",
+        "name": "whipping cream",
+        "fatContent": 0.3
+    },
+    {
+        "id": "4",
+        "name": "half and half",
+        "fatContent": 0.1425
+    },
+    {
+        "id": "5",
+        "name": "whole milk",
+        "fatContent": 0.0325
+    },
+    {
+        "id": "6",
+        "name": "two percent milk",
+        "fatContent": 0.02
+    },
+    {
+        "id": "7",
+        "name": "one percent milk",
+        "fatContent": 0.01
+    },
+    {
+        "id": "8",
+        "name": "skim milk",
+        "fatContent": 0
+    }
+]
