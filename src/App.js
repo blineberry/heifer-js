@@ -43,7 +43,6 @@ function getPrettyVolume(ounceQty) {
   }
 
   if (ounceQty < 2) {
-    console.log({ounceQty});
     return `${ quarterOunces } ${ quarterOunces > 1 || quarterOunces === 0 ? "ounces" : "ounce" }`;
   }
 
