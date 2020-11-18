@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react'
 
 function getPrettyVolume(ounceQty) {
   let roundedOunces = Math.round(ounceQty);
+  let quarterOunces = Math.round(Math.round(ounceQty * 4) / 4 * 100) / 100;
   let rounded100Ounces = Math.round(ounceQty * 100);
 
   // if a third of a tsp
@@ -41,8 +42,9 @@ function getPrettyVolume(ounceQty) {
     return "3 tablespoons"
   }
 
-  if (ounceQty < 4) {
-    return `${ roundedOunces } ${ roundedOunces > 1 ? "ounces" : "ounce" }`;
+  if (ounceQty < 2) {
+    console.log({ounceQty});
+    return `${ quarterOunces } ${ quarterOunces > 1 || quarterOunces === 0 ? "ounces" : "ounce" }`;
   }
 
   if (roundedOunces % 8 === 0) {
@@ -57,7 +59,7 @@ function getPrettyVolume(ounceQty) {
     return `${ roundedOunces / 8 } ${ roundedOunces / 8 > 1 ? "cups" : "cup" }`;
   }
 
-  return `${ roundedOunces } ${ roundedOunces > 1 ? "ounces" : "ounce" }`;
+  return `${ quarterOunces } ${ quarterOunces > 1 || quarterOunces === 0 ? "ounces" : "ounce" }`;
 }
 
 function getOutputInstructions(targetVolume, targetUnit, targetDairy, starterDairy1, starterDairy2) {
@@ -75,7 +77,7 @@ function getOutputInstructions(targetVolume, targetUnit, targetDairy, starterDai
     dairyHigh = starterDairy1;
   }
 
-  if (dairyHigh.fatContent < targetDairy.fatContent) {
+  if (dairyHigh.fatContent < targetDairy.fatContent || dairyLow.fatContent > targetDairy.fatContent) {
     return `Cannot get ${ targetDairy.name } from ${ starterDairy1.name } and ${ starterDairy2.name }.`;
   }
 
@@ -99,12 +101,6 @@ function App() {
   const [outputInstructions, setOutputInstructions] = useState("")
 
   useEffect(() => {
-    console.log({dairy1});
-    console.log({dairy2});
-    console.log({desiredQty});
-    console.log({desiredQtyUnit});
-    console.log({desiredDairy});
-
     setOutputInstructions(getOutputInstructions(
       desiredQty, 
       volumes.filter(v => v.id === desiredQtyUnit)[0],
